@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}All Words in Dictionary{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <article class="post">
+      <div>
+        {% if words == {} %}
+        <h3>There are no words (literally)!</h3>        
+        {% else %}
+
+        <table>
+          <tr>
+            <th>Word</th>
+            <th>Definition</th>
+          </tr>
+          {% for word in words %}
+          <tr>
+            <td><a class="action" href="{{ url_for('word.show', word_name=word) }}">{{word}}</a></td>
+            <td style="word-break: break-word;">{{ words[word] }} {% if lengths[word] == 2 %} (<a class="action" href="{{ url_for('word.show', word_name=word) }}">{{ lengths[word] - 1}} more definition</a>){% elif lengths[word] > 2 %} (<a class="action" href="{{ url_for('word.show', word_name=word) }}">{{ lengths[word] - 1}} more definitions</a>){% endif %}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% endif %}
+      </div>
+    </article>
+{% endblock %}
