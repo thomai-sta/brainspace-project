@@ -100,7 +100,9 @@ docker stop <containers_name>
 If the docker approach does not work, you can setup and run the application manually. First., create and activate a virtual environment:
 ```bash
 python3 -m venv venv
-. venv/bin/activate
+cd venv/Scripts/
+activate.bat
+cd ../../
 ```
 
 ```bash
@@ -108,16 +110,15 @@ pip install dist/dictionary-1.0.0-py3-none-any.whl
 ```
 
 ```bash
-export FLASK_APP=dictionary
+set FLASK_APP=dictionary
 flask init-db
 pip install waitress
-waitress-serve --call 'dictionary:create_app'
+waitress-serve --call "dictionary:create_app"
 ```
 
-Open a browser and go to ```0.0.0.0:8080```. Application should be up and running.
+Open a browser and go to ```localhost:8080```. Application should be up and running.
 
-
-
+**With this method, there is an issue with the DB initialization (it does not initialize), so index page is running, but no request can be handled.**
 
 
 ## Description
