@@ -33,7 +33,7 @@ Open a browser and go to ```0.0.0.0:8080```. Application should be up and runnin
 To stop the container:
 ```bash
 docker container ls
-``
+```
 Find the container for the dictionary image and copy its name
 ```bash
 docker stop <containers_name>
