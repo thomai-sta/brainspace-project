@@ -12,7 +12,7 @@ Open a terminal and follow the steps below.
 Get project from github
 ```bash
 git clone https://github.com/thomai-sta/brainspace-project.git
-cd brainspace-project-main
+cd brainspace-project
 ```
 
 #### Run with docker
