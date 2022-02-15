@@ -1,8 +1,6 @@
 certifi==2021.10.8
 charset-normalizer==2.0.12
 click==8.0.3
-# Editable Git install with no remote (dictionary==1.0.0)
--e /home/thomai/Desktop/brainspace
 Flask==2.0.2
 idna==3.3
 itsdangerous==2.0.1
