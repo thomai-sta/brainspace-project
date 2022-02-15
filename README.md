@@ -12,7 +12,7 @@ Open a terminal and follow the steps below.
 Get project from github
 ```bash
 git clone https://github.com/thomai-sta/brainspace-project.git
-cd brainspace-project
+cd brainspace-project-main
 ```
 
 #### Run with docker
@@ -29,6 +29,15 @@ docker run -d -p 8080:8080 dictionary
 ```
 
 Open a browser and go to ```0.0.0.0:8080```. Application should be up and running.
+
+To stop the container:
+```bash
+docker container ls
+``
+Find the container for the dictionary image and copy its name
+```bash
+docker stop <containers_name>
+```
 
 #### Run manually
 
@@ -74,8 +83,18 @@ Run docker container
 docker run -d -p 8080:8080 dictionary
 ```
 
-Open a browser and go to ```0.0.0.0:8080```. Application should be up and running.
+Open a browser and go to ```localhost:8080```. Application should be up and running.
 
+To stop the container:
+```bash
+docker container ls
+``
+Find the container for the dictionary image and copy its name
+```bash
+docker stop <containers_name>
+```
+
+*In Windows once you build the image, you can stop and start the container from the interface of Docker Desktop.*
 #### Run manually
 
 If the docker approach does not work, you can setup and run the application manually. First., create and activate a virtual environment:
